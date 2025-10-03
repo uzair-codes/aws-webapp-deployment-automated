@@ -69,9 +69,6 @@ systemctl start nginx
 #---------------------------
 # INSTALL AMAZON SSM AGENT
 # --------------------------
-apt-get install -y amazon-ssm-agent
-systemctl enable amazon-ssm-agent
-systemctl start amazon-ssm-agent
 
 #---------------------------
 # VARIABLES (CUSTOMIZE IF NEEDED)
