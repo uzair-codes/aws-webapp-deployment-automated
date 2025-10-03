@@ -1,5 +1,3 @@
----
-
 # 🌍 AWS WebApp Automated – Terraform + Ansible
 
 ## 📌 Overview
@@ -58,9 +56,9 @@ aws-webapp-automated/
 
 ```bash
 cd infra/
-terraform init
-terraform plan
-terraform apply
+terraform init    
+terraform plan -out plan.out
+terraform apply "plan.out"
 ```
 
 Outputs include:
@@ -74,7 +72,7 @@ Outputs include:
 ```bash
 cd ../ansible/
 ansible-inventory -i inventories/aws_ec2.yml --graph   # Verify inventory
-ansible-playbook -i inventories/aws_ec2.yml site.yml   # Deploy app
+ansible-playbook -i inventories/aws_ec2.yml site.yml -vv  # Deploy app
 ```
 
 Now open your **ALB DNS name** in the browser → ✅ Portfolio app live!
@@ -83,12 +81,7 @@ Now open your **ALB DNS name** in the browser → ✅ Portfolio app live!
 
 ## 🖼️ Architecture Diagram
 
-👉 Suggested tool: **[Excalidraw](https://excalidraw.com/)** (free & open-source).
-Save your diagram in `/assets/architecture.png` and link it here:
-
-```
 ![Project Architecture](assets/architecture.png)
-```
 
 ---
 
