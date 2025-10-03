@@ -1,5 +1,3 @@
----
-
 # 📘 Terraform Infrastructure – AWS WebApp Automated
 
 ## 📌 Project Description
@@ -21,12 +19,7 @@ It automates the creation of a secure, scalable, and highly available environmen
 
 ## 🏗️ Architecture Diagram
 
-You can draw the architecture using **[Excalidraw](https://excalidraw.com/)** or **Lucidchart**.
-For now, use this placeholder in your repo:
-
-```
-![AWS Infrastructure Architecture](../assets/terraform-architecture.png)
-```
+![AWS Infrastructure Architecture](../assets/architecture.png)
 
 ---
 
@@ -38,10 +31,10 @@ Before running this project, ensure you have:
 * An **AWS account** with programmatic access (Access Key + Secret Key)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed & configured
 * **Remote backend** set up (recommended):
-
+  
   * **S3 bucket** for storing Terraform state
   * **DynamoDB table** for state locking
-
+  * **For setting up Remode Backend** refer to my [terraform-projects repo](https://github.com/uzair-codes/terraform-projects/tree/main) 
 ---
 
 ## 🚀 How to Use
@@ -53,10 +46,10 @@ Follow these steps:
 terraform init
 
 # 2️⃣ Review execution plan
-terraform plan
+terraform plan -out plan.out
 
 # 3️⃣ Apply changes (provision infra)
-terraform apply
+terraform apply "plan.out"
 
 # 4️⃣ Destroy infra (when cleaning up)
 terraform destroy
