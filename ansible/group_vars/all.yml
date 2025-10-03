@@ -1,0 +1,2 @@
+ansible_ssh_common_args: >
+  -o ProxyCommand="ssh -i ~/secrets/public-key.pem -W %h:%p ubuntu@3.109.11.90"
