@@ -1,5 +1,3 @@
----
-
 # 🛠️ Ansible – Configuration Management & App Deployment
 
 ## 📌 Project Description
@@ -52,8 +50,10 @@ ansible/
 Make sure the **amazon.aws collection** and **boto3** are available:
 
 ```bash
+python3 -m venv myvenv
+source myvenv/bin/activate
+pip install boto3 botocore ansible
 ansible-galaxy collection install amazon.aws
-pip install boto3 botocore
 ```
 
 ### 2️⃣ Test inventory
@@ -69,7 +69,7 @@ ansible-inventory -i inventories/aws_ec2.yml --graph
 Deploy the portfolio app:
 
 ```bash
-ansible-playbook -i inventories/aws_ec2.yml site.yml
+ansible-playbook -i inventories/aws_ec2.yml site.yml -vv
 ```
 
 ---
@@ -121,7 +121,7 @@ By working with this project, you will learn:
 
 ---
 
-🔥 At this point, you have a working automation pipeline:
+# 🔥 At this point, you have a working automation pipeline:
 **Terraform → AWS Infra → Ansible → App Deployment.**
 
 ---
