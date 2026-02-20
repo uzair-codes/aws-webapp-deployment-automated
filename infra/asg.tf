@@ -3,6 +3,8 @@ resource "aws_autoscaling_group" "web_asg" {
   max_size                  = var.asg_max_size
   min_size                  = var.asg_min_size
   desired_capacity          = var.asg_desired_capacity
+  # Where Will Servers Be Created?
+  # This line, Loops through all private subnets, Takes their IDs, Places EC2 instances inside them.
   vpc_zone_identifier       = [for s in aws_subnet.private : s.id]
 
   launch_template {
